@@ -44,23 +44,23 @@
 						<div class="col-md-6 col-md-offset-2">
 							<form action="#" role="form" method="post">
 								<div class="form-group">
-									<label>ID</label> <input class="form-control" placeholder="ID"
+									<label>ID</label> <input class="form-control" placeholder="${sessionScope.admin.amId }"
 										type="text" readonly="readonly">
 								</div>
 								<div class="form-group">
-									<label>名称</label> <input type="text" class="form-control">
+									<label>名称</label> <input type="text" class="form-control" value="${sessionScope.admin.name }">
 								</div>
 								<div class="form-group">
-									<label>标签</label> <input type="text" class="form-control">
+									<label>标签</label> <input type="text" class="form-control" value="${sessionScope.admin.tag }">
 								</div>
 								<div class="form-group">
 									<label>头像</label> <input type="file" class="form-control">
 								</div>
 								<div class="form-group">
-									<label>地址</label> <input type="text" class="form-control">
+									<label>地址</label> <input type="text" class="form-control" value="${sessionScope.admin.address }">
 								</div>
 								<div class="form-group">
-									<label>联系方式</label> <input type="text" class="form-control">
+									<label>联系方式</label> <input type="text" class="form-control" value="${sessionScope.admin.phone }">
 								</div>
 								<button type="submit" class="btn btn-primary">提交修改</button>
 							</form>

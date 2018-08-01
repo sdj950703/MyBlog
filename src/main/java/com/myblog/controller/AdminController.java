@@ -12,18 +12,55 @@ import com.myblog.model.Admin;
 import com.myblog.service.IAdminService;
 
 @Controller
-@RequestMapping(value="admin")
+@RequestMapping(value="/admin")
 public class AdminController {
 	
 	@Autowired
 	private IAdminService adminService;
 	
+	/**
+	 * 检查登陆状态并读取相关cookie
+	 * 
+	 * @param req request对象
+	 * 
+	 * @return 若cookie验证有效，自动登陆，否则跳转到adminLogin界面
+	 */
 	@RequestMapping
-	public String checkLogin(){
+	public String checkLogin(HttpServletRequest req){
+		//获取cookie
+		Cookie[] cookies=req.getCookies();
+		if(cookies != null){
+			String email=null;
+			String pass=null;
+			for (Cookie cookie : cookies) {
+				if("email".equals(cookie.getName())){
+					email=cookie.getValue();
+				}else if("pass".equals(cookie.getName())){
+					pass=cookie.getValue();
+				}
+			}
+			//重新验证记住的邮箱和密码
+			Admin admin=new Admin();
+			admin.setEmail(email);
+			admin.setPass(pass);
+			Admin loginAdmin = adminService.login(admin);
+			if(loginAdmin != null){
+				req.getSession().setAttribute("admin", loginAdmin);
+				return "admin/adminInfo";
+			}
+		}
+		req.getSession().removeAttribute("admin");
 		return "admin/adminLogin";
 	}
-	
-	@RequestMapping(value="login")
+	/**
+	 * 管理员登录，并添加可以保存登录信息的cookie
+	 * @param admin 实体类对象，存储页面表单传递的参数
+	 * @param remember 是否添加cookie的标志符
+	 * @param req request对象
+	 * @param resp response对象
+	 * @return 登陆成功-adminInfo.jsp 登陆失败-adminLogin.jsp
+	 */
+	@RequestMapping(value="/login")
 	public String adminLogin(Admin admin,String remember,HttpServletRequest req,HttpServletResponse resp){
 		Admin loginAdmin = adminService.login(admin);
 		if(loginAdmin!=null){
@@ -43,6 +80,29 @@ public class AdminController {
 			return "admin/adminInfo";
 		}
 		req.setAttribute("msg", "用户名密码错误");
+		return "admin/adminLogin";
+	}
+	/**
+	 * 注销登录，删除存储的登录信息
+	 * @param req request对象
+	 * @param resp response对象
+	 * @return 跳转到登陆界面
+	 */
+	@RequestMapping("/logout")
+	public String adminLogOut(HttpServletRequest req,HttpServletResponse resp){
+		//删除session存储的登录信息
+		req.getSession().removeAttribute("admin");
+		//获取cookie内容
+		Cookie[] cookies=req.getCookies();
+		if(cookies != null){
+			for (Cookie cookie : cookies) {
+				if("email".equals(cookie.getName()) || "pass".equals(cookie.getName())){
+					//设置cookie最大生存时间为0，相当于跟随session对象消失
+					cookie.setMaxAge(0);
+					resp.addCookie(cookie);
+				}
+			}
+		}
 		return "admin/adminLogin";
 		
 	}

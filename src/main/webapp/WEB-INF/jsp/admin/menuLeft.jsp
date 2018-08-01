@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tables</title>
 <link href="<%=staticPath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../css/adminStyles.css" />
+<link rel="stylesheet" href="<%=staticPath%>/css/adminStyles.css" />
 
 </head>
 
