@@ -24,20 +24,20 @@
 			</form>
 			<ul class="nav menu">
 				<li>
-					<a href="#"><span class="glyphicon glyphicon-dashboard"></span>个人信息</a>
+					<a href="<%=path%>/admin/adminInfo"><span class="glyphicon glyphicon-dashboard"></span>个人信息</a>
 				</li>
 				<li class="parent ">
-					<a href="#">
+					<a href="<%=path%>/blog">
 						<span class="glyphicon glyphicon-list"></span> 博客信息 <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="glyphicon glyphicon-s glyphicon-plus"></em></span>
 					</a>
 					<ul class="children collapse" id="sub-item-1">
 						<li>
-							<a class="" href="#">
+							<a class="" href="<%=path%>/blog">
 								<span class="glyphicon glyphicon-share-alt"></span> 博客管理
 							</a>
 						</li>
 						<li>
-							<a class="" href="#">
+							<a class="" href="<%=path%>/blog/toAddBlog">
 								<span class="glyphicon glyphicon-share-alt"></span> 添加博客
 							</a>
 						</li>

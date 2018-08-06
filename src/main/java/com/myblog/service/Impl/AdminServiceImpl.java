@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.myblog.dao.AdminMapper;
 import com.myblog.model.Admin;
+import com.myblog.model.ImgResult;
 import com.myblog.service.IAdminService;
 
 @Service
@@ -57,5 +58,7 @@ public class AdminServiceImpl implements IAdminService {
 		return adminMapper.updateByPrimaryKey(admin)>0;
 		
 	}
+
+	
 
 }

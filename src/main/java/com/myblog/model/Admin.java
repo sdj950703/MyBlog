@@ -1,10 +1,14 @@
 package com.myblog.model;
 
-import org.springframework.stereotype.Component;
+import java.io.Serializable;
 
-@Component
-public class Admin {
-    private Integer amId;
+public class Admin implements Serializable{
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private Integer amId;
 
     private String name;
 

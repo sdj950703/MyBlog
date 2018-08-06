@@ -10,9 +10,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.myblog.model.Admin;
+import com.myblog.model.ImgResult;
 import com.myblog.service.IAdminService;
 
 @Controller
@@ -31,7 +33,6 @@ public class AdminController {
 	 */
 	@RequestMapping
 	public String checkLogin(HttpServletRequest req,String msg,ModelMap model){
-		System.out.println(msg);
 		//获取cookie
 		Cookie[] cookies=req.getCookies();
 		if(cookies != null){
@@ -136,6 +137,13 @@ public class AdminController {
 		}
 		model.addAttribute("msg", msg);
 		return "redirect:/admin";
+		
+	}
+	
+	
+	@RequestMapping(value="/adminInfo")
+	public String adminInfo(){
+		return "admin/adminInfo";
 		
 	}
 

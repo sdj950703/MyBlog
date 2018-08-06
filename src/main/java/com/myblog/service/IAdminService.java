@@ -3,6 +3,7 @@ package com.myblog.service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.myblog.model.Admin;
+import com.myblog.model.ImgResult;
 
 public interface IAdminService {
 	/**
@@ -24,5 +25,6 @@ public interface IAdminService {
      * @return 
      */
 	boolean updateAdmin(Admin admin);
+
 
 }

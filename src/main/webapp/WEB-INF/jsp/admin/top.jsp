@@ -48,7 +48,6 @@
 	</div><!--/.main-->
     <script src="<%=staticPath%>/js/jquery/jquery-3.3.1.min.js" ></script>
     <script src="<%=staticPath%>/js/bootstrap/bootstrap.min.js" ></script>
-	<script src="<%=staticPath%>/js/bootstrap/bootstrap-table.js"></script>
 	<script>
 		!function ($) {
 			$(document).on("click","ul.nav li.parent > a > span.icon", function(){		  
