@@ -159,20 +159,20 @@
 		<!-- log end -->
 		<!-- 解析JSON -->
 		<dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-core</artifactId>
-        <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-annotations</artifactId>
-        <version>${jackson.version}</version>
-    </dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 		<!-- 上传组件包 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -195,6 +195,14 @@
 			<artifactId>commons-logging</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+
+		<!-- java mail -->
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>javax.mail-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>MyBlog</finalName>
@@ -210,40 +218,40 @@
 			</plugin>
 			<plugin>
 
-           <groupId>org.mybatis.generator</groupId>
-           <artifactId>mybatis-generator-maven-plugin</artifactId>
-           <version>1.3.2</version>
-           <executions>
-              <execution>
-                 <id>Generate MyBatis Files</id>
-                 <goals>
-                    <goal>generate</goal>
-                 </goals>
-                 <phase>generate</phase>
-                 <configuration>
-                    <verbose>true</verbose>
-                    <overwrite>true</overwrite>
-                 </configuration>
-              </execution>
-           </executions>
-           <dependencies>
-              <dependency>
-                 <groupId>mysql</groupId>
-                 <artifactId>mysql-connector-java</artifactId>
-                 <version>5.1.36</version>
-              </dependency>
-              <dependency>
-                 <groupId>org.mybatis.generator</groupId>
-           <artifactId>mybatis-generator-core</artifactId>
-                 <version>1.3.5</version>
-              </dependency>
-              <dependency>
-                 <groupId>org.mybatis</groupId>
-                 <artifactId>mybatis</artifactId>
-                 <version>3.4.1</version>
-              </dependency>
-           </dependencies>
-        </plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<executions>
+					<execution>
+						<id>Generate MyBatis Files</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>generate</phase>
+						<configuration>
+							<verbose>true</verbose>
+							<overwrite>true</overwrite>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.36</version>
+					</dependency>
+					<dependency>
+						<groupId>org.mybatis.generator</groupId>
+						<artifactId>mybatis-generator-core</artifactId>
+						<version>1.3.5</version>
+					</dependency>
+					<dependency>
+						<groupId>org.mybatis</groupId>
+						<artifactId>mybatis</artifactId>
+						<version>3.4.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 		</plugins>
 	</build>
 </project>

@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="<%=path%>/admin">查询</a>
+<script type="text/javascript">
+window.location="<%=path%>/main";
+</script>
 </body>
 </html>

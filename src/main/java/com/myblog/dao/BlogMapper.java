@@ -20,4 +20,12 @@ public interface BlogMapper {
     int updateByPrimaryKey(Blog record);
 
 	List<Blog> selectAll();
+
+	List<Blog> selectBlogOrderByDate();
+
+	List<Blog> selectBlogOrderByReadCount();
+
+	List<Blog> selectAllBlogOrderByDate();
+
+	int updateReadCountByPK(Integer bid);
 }

@@ -32,6 +32,38 @@
     from blog
     where b_id = #{bId,jdbcType=INTEGER}
   </select>
+  
+  <update id="updateReadCountByPK">
+     update blog
+     set readCount=readCount+1
+     where b_id=#{bid}
+  </update>
+  
+  <select id="selectBlogOrderByDate" resultMap="ResultMapWithBLOBs">
+     select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from blog
+    order by createTime desc
+    limit 0,3
+  </select>
+  
+  <select id="selectAllBlogOrderByDate" resultMap="BaseResultMap">
+     select 
+    <include refid="Base_Column_List" />
+    from blog
+    order by createTime desc
+  </select>
+  
+  <select id="selectBlogOrderByReadCount" resultMap="BaseResultMap">
+     select 
+    <include refid="Base_Column_List" />
+    from blog
+    order by readCount desc
+    limit 0,5
+  </select>
+  
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from blog
     where b_id = #{bId,jdbcType=INTEGER}

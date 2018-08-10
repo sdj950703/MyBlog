@@ -21,4 +21,12 @@ public interface IBlogService {
 
 	int editBlog(Blog blog);
 
+	List<Blog> selectBlogOrderByDate();
+
+	List<Blog> selectBlogOrderByReadCount();
+
+	List<Blog> selectAllBlogOrderByDate();
+
+	int updateReadCountByPK(Integer bid);
+
 }

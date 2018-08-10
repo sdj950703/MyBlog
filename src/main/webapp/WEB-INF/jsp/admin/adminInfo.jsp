@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
 	String path = request.getContextPath();
 	String staticPath = path + "/static";
@@ -12,7 +12,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tables</title>
 
-<link href="<%=staticPath%>/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="<%=staticPath%>/css/bootstrap/bootstrap.min.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="<%=staticPath%>/css/adminStyles.css" />
 
 </head>
@@ -43,23 +44,25 @@
 					<div class="panel-heading">修改信息</div>
 					<div class="panel-body">
 						<div class="col-md-6 col-md-offset-2">
-							<form action="<%=path%>/admin/updateAdmin" role="form" method="post" enctype="multipart/form-data">
+							<form action="<%=path%>/admin/updateAdmin" role="form"
+								method="post" enctype="multipart/form-data">
 								<div class="form-group">
-									<input value="${sessionScope.admin.amId }"
-										type="hidden" name="amId"><input
-									type="hidden" name="img" value="${sessionScope.admin.img}">
+									<input value="${sessionScope.admin.amId }" type="hidden"
+										name="amId"><input type="hidden" name="img"
+										value="${sessionScope.admin.img}">
 								</div>
 								<div class="form-group">
 									<div class="row">
 										<img alt="" src="<%=path%>${sessionScope.admin.img}"
 											class="img-circle col-md-3 col-md-offset-5">
 									</div>
-									
+
 								</div>
 								<div class="form-group">
-									<label>名称</label> <input type="text" name="name" class="form-control" value="${sessionScope.admin.name }">
+									<label>名称</label> <input type="text" name="name"
+										class="form-control" value="${sessionScope.admin.name }">
 								</div>
-								
+
 								<label>标签</label>
 								<c:forTokens items="${sessionScope.admin.tag}" delims=","
 									var="t">
@@ -69,20 +72,24 @@
 
 								</c:forTokens>
 								<div class="form-group">
-								    <label>头像</label> <input type="file" name="imgFile"
+									<label>头像</label> <input type="file" name="imgFile"
 										class="form-control">
 								</div>
 								<div class="form-group">
-									<label>地址</label> <input type="text" name="address" class="form-control" value="${sessionScope.admin.address }">
+									<label>地址</label> <input type="text" name="address"
+										class="form-control" value="${sessionScope.admin.address }">
 								</div>
 								<div class="form-group">
-									<label>邮箱</label> <input type="text" name="email" class="form-control" value="${sessionScope.admin.email }">
+									<label>邮箱</label> <input type="text" name="email"
+										class="form-control" value="${sessionScope.admin.email }">
 								</div>
 								<div class="form-group">
-									<label>密码</label> <input type="password" name="pass" class="form-control" value="${sessionScope.admin.pass }">
+									<label>密码</label> <input type="password" name="pass"
+										class="form-control" value="${sessionScope.admin.pass }">
 								</div>
 								<div class="form-group">
-									<label>联系方式</label> <input type="text" name="phone" class="form-control" value="${sessionScope.admin.phone }">
+									<label>联系方式</label> <input type="text" name="phone"
+										class="form-control" value="${sessionScope.admin.phone }">
 								</div>
 								<button type="submit" class="btn btn-primary">提交修改</button>
 							</form>
@@ -99,11 +106,11 @@
 	<script src="<%=staticPath%>/js/bootstrap/bootstrap.min.js"></script>
 </body>
 <script type="text/javascript">
-window.onload=function(){
-	var msg='${msg}';
-	if(msg!=null&&msg!=""&&msg!=undefined){
-		alert(msg);
-	}
-};
+	window.onload = function() {
+		var msg = '${msg}';
+		if (msg != null && msg != "" && msg != undefined) {
+			alert(msg);
+		}
+	};
 </script>
 </html>
