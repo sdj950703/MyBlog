@@ -80,8 +80,7 @@
 		var E = window.wangEditor;
 		var editor = new E('#editor');
 		var $text1 = $('#text1');
-		editor.customConfig.uploadImgServer = '<%=path%>
-		/blog/imgUpload';
+		editor.customConfig.uploadImgServer = '<%=path%>/blog/imgUpload';
 		editor.customConfig.uploadFileName = 'img';
 		editor.customConfig.onchange = function(html) {
 			$text1.val(html);
