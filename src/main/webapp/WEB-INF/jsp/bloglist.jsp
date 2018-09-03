@@ -14,7 +14,7 @@
 <link rel="stylesheet"
 	href="<%=staticPath%>/css/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=staticPath%>/css/bootstrap/mystyle.css" />
-<title></title>
+<title>博客列表</title>
 </head>
 <body>
 	<!--top -->
@@ -61,39 +61,7 @@
 				</div>
 			</div>
 			<!-- 组件复用 -->
-			<div class="col-lg-3" style="margin-left: 30px;">
-				<div class="row">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3>文章分类</h3>
-							<div class="row">
-								<table class="table table-hover">
-									<tr>
-										<td><a href="#" class="blogTitle"><span
-												class="glyphicon glyphicon-menu-right"></span> Java(3)</a></td>
-									</tr>
-									<tr>
-										<td><a href="#" class="blogTitle"><span
-												class="glyphicon glyphicon-menu-right"></span> Spring(5)</a></td>
-									</tr>
-									<tr>
-										<td><a href="#" class="blogTitle"><span
-												class="glyphicon glyphicon-menu-right"></span> MyBatis(4)</a></td>
-									</tr>
-									<tr>
-										<td><a href="#" class="blogTitle"><span
-												class="glyphicon glyphicon-menu-right"></span> JDBC(2)</a></td>
-									</tr>
-									<tr>
-										<td><a href="#" class="blogTitle"><span
-												class="glyphicon glyphicon-menu-right"></span> Linux(3)</a></td>
-									</tr>
-								</table>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<jsp:include page="menuright.jsp"></jsp:include>
 			<!-- 组件复用 -->
 		</div>
 	</div>

@@ -26,7 +26,7 @@
 				<div class="container">
 
 					<div class="navbar-header">
-						<a class="navbar-brand" href="#">个人博客</a>
+						<a class="navbar-brand" href="<%=path%>/admin">个人博客</a>
 					</div>
 
 					<div class="collapse navbar-collapse">
@@ -37,7 +37,7 @@
 							</li>
 							<li><a href="<%=path%>/message/sendMessage" class="aa">给我留言</a>
 							</li>
-							<li><a href="#" class="aa">赞助作者</a></li>
+							<li><a href="<%=path%>/main/zan" class="aa">赞助作者</a></li>
 						</ul>
 						<!-- 搜索框 -->
 						<form class="navbar-form navbar-right">

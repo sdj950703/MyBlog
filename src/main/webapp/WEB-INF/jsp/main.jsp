@@ -15,7 +15,7 @@
 <link rel="stylesheet"
 	href="<%=staticPath%>/css/bootstrap/bootstrap.min.css" />
 <link rel="stylesheet" href="<%=staticPath%>/css/bootstrap/mystyle.css" />
-<title>Hello World</title>
+<title>博客主页</title>
 </head>
 
 <body>
@@ -48,7 +48,7 @@
 								</div>
 								<div>
 									<button class="btn btn-default pull-right love">
-										<span class="glyphicon glyphicon-heart love-icon"></span> 喜欢</a>
+										<span class="glyphicon glyphicon-heart love-icon"></span> 喜欢</button>
 								</div>
 							</div>
 						</div>
@@ -56,49 +56,7 @@
 				</c:forEach>
 			</div>
 			<!-- 组件复用 -->
-			<div class="col-lg-3" style="margin-left: 30px;">
-				<div class="row">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3>博主</h3>
-							<div class="title-line">
-								<h4></h4>
-							</div>
-							<div class="row">
-								<img src="<%=path%>${sessionScope.admin.img}"
-									class="img-circle col-lg-5 col-lg-offset-3" />
-							</div>
-							<div class="row text-center">
-								<b>王大可</b><br /> <span class="label label-primary">Java</span>
-								<span class="label label-success">Python</span> <span
-									class="label label-info">大数据</span> <span
-									class="label label-warning">闲置码农</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h3>热门文章</h3>
-							<div class="row">
-								<table class="table table-hover">
-									<c:forEach items="${requestScope.blogListByReadCount}"
-										var="blog">
-										<tr>
-											<td><a href="<%=path %>/main/blogDetail/${blog.bId}"
-												class="blogTitle"><span
-													class="glyphicon glyphicon-menu-right"></span>${blog.title
-													}</a></td>
-										</tr>
-									</c:forEach>
-								</table>
-							</div>
-							<a class="pull-right" href="<%=path%>/main/toBlogList">>>更多</a>
-						</div>
-					</div>
-				</div>
-			</div>
+			<jsp:include page="menuright.jsp"></jsp:include>
 			<!-- 组件复用 -->
 		</div>
 	</div>

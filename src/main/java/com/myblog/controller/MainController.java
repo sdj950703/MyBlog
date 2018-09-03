@@ -32,6 +32,7 @@ public class MainController {
 	@Autowired
 	private IVisitorService visitorService;
 
+	
 	/**
 	 * 查询博主信息 分别按时间顺序和阅读量查询博文
 	 * 
@@ -50,10 +51,15 @@ public class MainController {
 				.selectBlogOrderByReadCount();
 		session.setAttribute("admin", admin);
 		map.addAttribute("blogListByDate", blogListByDate);
-		map.addAttribute("blogListByReadCount", blogListByReadCount);
+		session.setAttribute("blogListByReadCount", blogListByReadCount);
 		map.addAttribute("msg", msg);
 		return "main";
 
+	}
+	
+	@RequestMapping(value = "zan")
+	public String zan() {
+		return "zanzhu";
 	}
 
 	/**
@@ -103,5 +109,6 @@ public class MainController {
 		map.addAttribute("blogListByReadCount", blogListByReadCount);
 		return "blogDetail";
 	}
+
 
 }
